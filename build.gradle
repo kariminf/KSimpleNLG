@@ -26,7 +26,7 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 // Release version
-version = '1.0.0'
+version = '4.2.2'
 
 ext.current_Date = getDate()
 
@@ -38,12 +38,12 @@ jar {
         }
     manifest {
         attributes 'Created-By': System.getProperty('java.version') + ' (' + System.getProperty('java.vendor') + ')',
-                   "Specification-Title"    : "Kariminf Information Miner",
-                   "Specification-Version"  : version,
-                   "Specification-Vendor"   : "Kariminf",
-                   "Implementation-Title"   : "kariminf.kinfominer",
-                   "Implementation-Version" : version + "-build" + current_Date ,
-                   "Implementation-Vendor"  : "Kariminf",
+                   //"Specification-Title"    : "Kariminf Information Miner",
+                   //"Specification-Version"  : version,
+                   /"Specification-Vendor"   : "Kariminf",
+                   //"Implementation-Title"   : "kariminf.kinfominer",
+                   //"Implementation-Version" : version + "-build" + current_Date ,
+                   //"Implementation-Vendor"  : "Kariminf",
                    "Built-With": "gradle-${project.getGradle().getGradleVersion()}, groovy-${GroovySystem.getVersion()}",
                    "Build-Time": current_Date,
                    "Built-By": project.hasProperty('BF_USER') ? project.getProperty('BF_USER') : System.getProperty('user.name'),

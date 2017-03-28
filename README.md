@@ -6,6 +6,9 @@
 [![codecov](https://img.shields.io/codecov/c/github/kariminf/KSimpleNLG.svg)](https://codecov.io/gh/kariminf/KSimpleNLG)
 [![jitpack](https://jitpack.io/v/kariminf/KSimpleNLG.svg)](https://jitpack.io/#kariminf/KSimpleNLG)
 
+
+A port of SimpleNLG-EnFr in hope one day I will have time and can add other languages.
+
 ## SimpleNLG-EnFr
 
 SimpleNLG-EnFr 1.1 is a bilingual English/French adaption of [SimpleNLG v4.2](http://code.google.com/p/simplenlg/).
