@@ -40,7 +40,7 @@ jar {
         attributes 'Created-By': System.getProperty('java.version') + ' (' + System.getProperty('java.vendor') + ')',
                    //"Specification-Title"    : "Kariminf Information Miner",
                    //"Specification-Version"  : version,
-                   /"Specification-Vendor"   : "Kariminf",
+                   //"Specification-Vendor"   : "Kariminf",
                    //"Implementation-Title"   : "kariminf.kinfominer",
                    //"Implementation-Version" : version + "-build" + current_Date ,
                    //"Implementation-Vendor"  : "Kariminf",

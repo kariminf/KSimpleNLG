@@ -34,7 +34,7 @@ For more info, see [Pierre-Luc Vaudry's page](http://www-etud.iro.umontreal.ca/~
 ## Use
 ou can download the jar from "release" section and link it to your project;
 Or you can use https://jitpack.io to manage dependency.
-Replace "tag" with the release tag; for example "4.2.0".
+Replace "tag" with the release tag; for example "4.2.2".
 
 ### Gradle
 
