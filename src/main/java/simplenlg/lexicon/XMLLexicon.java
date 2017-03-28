@@ -19,6 +19,7 @@
 package simplenlg.lexicon;
 
 import java.io.File;
+import java.io.InputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
@@ -130,15 +131,15 @@ public class XMLLexicon extends Lexicon {
 		String xmlLexiconFilePath;
 		switch (language) {
 		case FRENCH :
-			xmlLexiconFilePath = "/simplenlg/lexicon/french/default-french-lexicon.xml";
+			xmlLexiconFilePath = "/lexicon/default-french-lexicon.xml";
 			break;
 		default :
-			xmlLexiconFilePath = "/simplenlg/lexicon/default-lexicon.xml";
+			xmlLexiconFilePath = "/lexicon/default-lexicon.xml";
 		}
 		
 		try {
-			createLexicon(getClass().getResource(xmlLexiconFilePath).toURI());
-		} catch (URISyntaxException ex) {
+			createLexicon(XMLLexicon.class.getResourceAsStream(xmlLexiconFilePath));
+		} catch (Exception ex) {
 			System.out.println(ex.toString());
 		}
 	}
@@ -251,6 +252,48 @@ public class XMLLexicon extends Lexicon {
 					.newInstance();
 			DocumentBuilder builder = factory.newDocumentBuilder();
 			Document doc = builder.parse(lexiconURI.toString());
+
+			if (doc != null) {
+				Element lexRoot = doc.getDocumentElement();
+				NodeList wordNodes = lexRoot.getChildNodes();
+				for (int i = 0; i < wordNodes.getLength(); i++) {
+					Node wordNode = wordNodes.item(i);
+					// ignore things that aren't elements
+					if (wordNode.getNodeType() == Node.ELEMENT_NODE) {
+						WordElement word = convertNodeToWord(wordNode);
+						if (word != null) {
+							words.add(word);
+							IndexWord(word);
+						}
+					}
+				}
+			}
+		} catch (Exception ex) {
+			System.out.println(ex.toString());
+		}
+	}
+	
+	/**
+	 * method to actually load and index the lexicon from a URI. 
+	 * This method uses InputStram so the file can be read from inside the jar file
+	 * 
+	 * @author Abdelkrime Aries
+	 * @param is
+	 */
+	private void createLexicon(InputStream is) {
+		// initialise objects
+		words = new HashSet<WordElement>();
+		indexByID = new HashMap<String, WordElement>();
+		indexByBase = new HashMap<String, List<WordElement>>();
+		indexByVariant = new HashMap<String, List<WordElement>>();
+		// added by vaudrypl
+		indexByCategory = new EnumMap<LexicalCategory, List<WordElement>>(LexicalCategory.class);
+
+		try {
+			DocumentBuilderFactory factory = DocumentBuilderFactory
+					.newInstance();
+			DocumentBuilder builder = factory.newDocumentBuilder();
+			Document doc = builder.parse(is);
 
 			if (doc != null) {
 				Element lexRoot = doc.getDocumentElement();
