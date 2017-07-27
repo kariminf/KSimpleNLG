@@ -1,10 +1,10 @@
-# KSimpleNLG
+# K-SimpleNLG
 
-[![Project](https://img.shields.io/badge/Project-KSimpleNLG-4B0082.svg)](https://github.com/kariminf/KSimpleNLG)
+[![Project](https://img.shields.io/badge/Project-K--SNLG-4B0082.svg)](https://github.com/kariminf/k-snlg)
 [![License](https://img.shields.io/badge/License-MPL_1.1-4B0082.svg)](https://www.mozilla.org/en-US/MPL/1.1/)
-[![Travis](https://img.shields.io/travis/kariminf/KSimpleNLG.svg)](https://travis-ci.org/kariminf/KSimpleNLG)
-[![codecov](https://img.shields.io/codecov/c/github/kariminf/KSimpleNLG.svg)](https://codecov.io/gh/kariminf/KSimpleNLG)
-[![jitpack](https://jitpack.io/v/kariminf/KSimpleNLG.svg)](https://jitpack.io/#kariminf/KSimpleNLG)
+[![Travis](https://img.shields.io/travis/kariminf/k-snlg.svg)](https://travis-ci.org/kariminf/KSimpleNLG)
+[![codecov](https://img.shields.io/codecov/c/github/kariminf/k-snlg.svg)](https://codecov.io/gh/kariminf/KSimpleNLG)
+[![jitpack](https://jitpack.io/v/kariminf/KSimpleNLG.svg)](https://jitpack.io/#kariminf/k-snlg)
 
 
 A port of SimpleNLG-EnFr in hope one day I will have time and can add other languages.
@@ -46,7 +46,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.github.kariminf:KSimpleNLG:tag'
+    compile 'com.github.kariminf:k-snlg:tag'
 }
 ```
 
@@ -62,7 +62,7 @@ dependencies {
 
 <dependency>
 	    <groupId>com.github.kariminf</groupId>
-	    <artifactId>KSimpleNLG</artifactId>
+	    <artifactId>k-snlg</artifactId>
 	    <version>tag</version>
 </dependency>
 ```
